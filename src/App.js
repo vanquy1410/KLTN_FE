@@ -4,19 +4,17 @@ import Home from './pages/Home/Home';
 import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 
-const routes =(
-  <Router>
+const App = () => {
+  return (
+    <Router>
       <Routes>
-        <Route path="/dashboard" element={<Home />} />
+        {/* <Route path="/home/:id" element={<Home />} /> */}
+        {/* <Route path="/home" element={<Home />} /> */}
+        <Route path="/home/:email" element={<Home />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
       </Routes>
-  </Router>
-);
-
-const App = () => {
-  return (
-    <div>{routes}</div>
+    </Router>
   );
 };
 

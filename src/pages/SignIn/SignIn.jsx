@@ -40,7 +40,8 @@ const SignIn = () => {
       // Handle successful login response
       if (response.data && response.data.token) {
         localStorage.setItem("token", response.data.token);
-        navigate('/dashboard');
+        localStorage.setItem("Email", Email); // Store email in localStorage
+        navigate(`/home/${Email}`); // Navigate to Home with email
       }
     } catch (error) {
       // Handle login error

@@ -2,11 +2,12 @@ import React from 'react'
 import ProfileInfo from '../Cards/ProfileInfo'
 import { useNavigate } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({accountInfo}) => {
 
     const navigate = useNavigate
     const onLogout = () =>{
-        navigate("/SignIn")
+        localStorage.clear()
+        navigate("/SignIn");
     }
   return (
     <div className='bg-white flex items center justify-between px-6 py-2 drop-shadow'>
@@ -14,7 +15,7 @@ const Navbar = () => {
 
         
 
-        <ProfileInfo onLogout={onLogout}/>
+        <ProfileInfo accountInfo={accountInfo} onLogout={onLogout}/>
     </div>
   )
 }
